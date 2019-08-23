@@ -43,6 +43,17 @@ body {
     background: #EE7752;
 }
 
+.card {
+    border: 1px solid white;
+    width: calc(20% - 6px);
+    height: calc(25% - 6px);
+    position: relative;
+    margin: 3px;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    border-radius: 8px;
+    }
+
 .front-face,
 .back-face {
     border: 2px solid rgb(179, 153, 8);
@@ -52,4 +63,12 @@ body {
     padding: 10px;
     background-color: black;
     backface-visibility: hidden;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face {
+    transform: rotateY(180deg);
 }
