@@ -50,23 +50,23 @@ Responsive - This application is fully responsive, which allows the user to play
 ## Testing
 
 Flip function
--Try to select more then two cards.
--Try to select the same card twice.
--Flip one card and then click on something that is not a card.
+- Try to select more then two cards.
+- Try to select the same card twice.
+- Flip one card and then click on something that is not a card.
 
 Sounds
--Test correct sound plays for a matched pair and unmatched pair.
--Test each card when clicked plays correct sound.
--Test correct sounds plays on game completion.
+- Test correct sound plays for a matched pair and unmatched pair.
+- Test each card when clicked plays correct sound.
+- Test correct sounds plays on game completion.
 
 Logic
--Complete the game.
--Click same incorrect pair multiple times to make sure shuffle function does not run by mistake.
+- Complete the game.
+- Click same incorrect pair multiple times to make sure shuffle function does not run by mistake.
 
 Restart
--Make sure when restart button is clicked that the cards shuffle.
--Click one card then click the restart button.
--click two cards then click the restart button.
+- Make sure when restart button is clicked that the cards shuffle.
+- Click one card then click the restart button.
+- Click two cards then click the restart button.
 
 ## Deployment
 This application was logged with git through the terminal. The git log was pushed to my gitHub account.
