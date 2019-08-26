@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+    /*background-color: aqua;*/
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, rgb(59, 110, 206), rgb(38, 228, 183));
+    background-size: 400% 400%;
+    animation: change 10s ease-in-out infinite;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -11,12 +19,12 @@
     flex-direction: column;
 }
 
-body {
-    height: 100vh;
-    /*background-color: aqua;*/
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, rgb(59, 110, 206), rgb(38, 228, 183));
-    background-size: 400% 400%;
-    animation: change 10s ease-in-out infinite;
+.score-panel {
+    display: flex;
+    justify-content: space-between;
+    width: 175px;
+    margin-bottom: 10px;
+    font: 18px/1.5 'Acme', sans-serif;
 }
 
 @keyframes change {
@@ -44,15 +52,15 @@ body {
 }
 
 .card {
-    border: 1px solid white;
-    width: calc(20% - 6px);
-    height: calc(25% - 6px);
-    position: relative;
-    margin: 3px;
-    transform-style: preserve-3d;
-    transition: transform .5s;
-    border-radius: 8px;
-    }
+border: 1px solid white;
+width: calc(20% - 6px);
+height: calc(25% - 6px);
+position: relative;
+margin: 3px;
+transform-style: preserve-3d;
+transition: transform .5s;
+border-radius: 8px;
+}
 
 .front-face,
 .back-face {
@@ -71,4 +79,11 @@ body {
 
 .front-face {
     transform: rotateY(180deg);
+}
+
+.pause {
+    pointer-events: none;
+}
+.card.flip {
+    pointer-events: none;
 }
