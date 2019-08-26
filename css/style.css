@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+
+/*General styling----------------------------------*/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.title {
+    font-family: Bangers, sans-serif;
+}
+
+.moves {
+    font-family: Bangers, sans-serif;
 }
 
 body {
@@ -10,6 +22,24 @@ body {
     background: linear-gradient(-45deg, #EE7752, #E73C7E, rgb(59, 110, 206), rgb(38, 228, 183));
     background-size: 400% 400%;
     animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}/* Crad Board styling----------------------*/
+
+.moves {
+    font-family: Bangers, sans-serif;
 }
 
 .container {
@@ -39,45 +69,31 @@ body {
     background-size: 40px;
 }
 
-
-@keyframes change {
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
-}
-
 .game {
     width: 800px;
     height: 640px;
-    border: 2px solid rgb(216, 203, 203);
-    border-radius: 8px;
+    border: 2px solid rgb(235, 160, 191);
+    border: 0px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     perspective: 1000px;
-    background: #EE7752;
 }
 
 .card {
-border: 1px solid white;
-width: calc(20% - 6px);
-height: calc(25% - 6px);
-position: relative;
-margin: 3px;
-transform-style: preserve-3d;
-transition: transform .5s;
-border-radius: 8px;
+    border: 1px solid white;
+    width: calc(20% - 6px);
+    height: calc(25% - 6px);
+    position: relative;
+    margin: 3px;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    border-radius: 8px;
 }
 
 .front-face,
 .back-face {
-    border: 2px solid rgb(179, 153, 8);
+    border: 2px solid rgb(226, 21, 117);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -86,6 +102,8 @@ border-radius: 8px;
     backface-visibility: hidden;
 }
 
+
+/* Flip functionality----------------------------------*/
 .card.flip {
     transform: rotateY(180deg);
 }
@@ -97,6 +115,34 @@ border-radius: 8px;
 .pause {
     pointer-events: none;
 }
+
 .card.flip {
     pointer-events: none;
+}
+
+/* Responsive Design*/
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .game {
+        width: 50vh;
+        height: 60vh;
+    }
+
+    .card {
+        width: calc(20% + 9px);
+        height: calc(25% - 6px)
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .deck {
+        width: 80vh;
+        height: 75vh;
+    }
+
+    .card {
+        width: calc(20% - 7px);
+        height: calc(25% - 6px)
+    }
+
 }
