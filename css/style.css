@@ -19,13 +19,26 @@ body {
     flex-direction: column;
 }
 
-.score-panel {
+.score-board {
     display: flex;
     justify-content: space-between;
     width: 175px;
     margin-bottom: 10px;
     font: 18px/1.5 'Acme', sans-serif;
 }
+
+.restart {
+    border: black;
+}
+
+.fa {
+    padding-top: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-size: 40px;
+}
+
 
 @keyframes change {
     0%{
