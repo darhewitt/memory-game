@@ -1,12 +1,16 @@
 (function () {
 
-    const cards = document.querySelectorAll('.card');
+    var cards = document.querySelectorAll('.card');
 
-    var cardHand = []
+    var cardHand = [];
 
-    var matchedCards = []
+    var matchedCards = [];
 
-    var board = document.getElementById("card-game")
+    var board = document.getElementById("card-game");
+  	
+  	var restartButton;
+  
+  
 
     //Shuffle function-------------------------------------
 
@@ -14,7 +18,7 @@
         cards.forEach(card => {
             let randomNum = Math.floor(Math.random() * 20);
             card.style.order = randomNum;
-        })
+        });
     }
 
     //Restart function-------------------------------------
@@ -30,9 +34,9 @@
         }
         moves = 0;
         movesCounter.innerHTML = `0 Moves`;
-        cardHand = []
-        matchedCards = []
-        setTimeout(shuffle, 700)
+        cardHand = [];
+        matchedCards = [];
+        setTimeout(shuffle, 700);
 
     }
 
@@ -45,7 +49,7 @@
     correctSound.src = "sounds/correct.mp3";
 
     var wrongSound = new Audio;
-    wrongSound.src = "sounds/wrong.mp3"
+    wrongSound.src = "sounds/wrong.mp3";
 
     var winSound = new Audio;
     winSound.src = "sounds/win.mp3";
@@ -93,14 +97,14 @@ let moves = 0;
         }
         //Once a pair has been chosen, freeze board , increase move counter and run match logic
         if (cardHand.length === 2) {
-            board.classList.add('pause')
+            board.classList.add('pause');
             movesNum();
             if (cardHand[0].dataset.framework === cardHand[1].dataset.framework) {
                 setTimeout(playCorrect, 800);
-                matched()
+                matched();
             } else {
-                setTimeout(playWrong, 800)
-                setTimeout(notMatched, 700)
+                setTimeout(playWrong, 800);
+                setTimeout(notMatched, 700);
             }
         }
     }
@@ -113,7 +117,7 @@ let moves = 0;
         cardHand = [];
         board.classList.remove('pause');
         if (matchedCards.length === 20) {
-            setTimeout(playWin, 1000)
+            setTimeout(playWin, 1000);
         }
     }
 
@@ -121,16 +125,9 @@ let moves = 0;
     function notMatched() {
         cardHand[0].classList.remove("flip");
         cardHand[1].classList.remove("flip");
-        cardHand = []
+        cardHand = [];
         board.classList.remove('pause');
 
-    }
-
-    function shuffle() {
-        cards.forEach(card => {
-            let randomNum = Math.floor(Math.random() * 20);
-            card.style.order = randomNum;
-        })
     }
 
 
